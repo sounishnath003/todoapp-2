@@ -1,14 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <div class="container block is-large">
-    <div class="">
+    <div class="has-text-centered">
     <h1 class="title mt60 p10 has-text-centered mt-5 has-text-black">Todo Lists</h1>
 
-    <%= form_tag(todo_lists_path, method: :get) do %>
-      <%= text_field_tag :search %>
-      <%= submit_tag "Search", :name => nil %>
+      <div class="form">
+        <div class="controls">
+                <%= form_tag(todo_lists_path, method: :get) do %>
+                  <%= text_field_tag :search, class: "input is-link" %>
+                  <%= submit_tag "Search", :name => nil, class: "button is-small is-link" %>
     <% end %>
 
+        </div>
+      </div>
     </div>
 
     <table class="table mr-auto  is-striped has-text-centered">
