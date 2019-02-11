@@ -10,6 +10,9 @@
       <span class="subtitle is-3"><%= todo_item.content %></span>
     </div>
   </strike>
+    <bold>
+      <p class="subtitle is-7 has-text-left text-bold is-bold">Finished : <%= strftime todo_item.completed_at %></p>
+    </bold>
          <div class="flex mt20 has-text-left">
 
       <%# <span class=""><i class="fa fa-bin"></i></span> %>

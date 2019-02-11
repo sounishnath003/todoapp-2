@@ -2,7 +2,7 @@
 
 <section class="block mr-auto has-text-centered mt50">
     <div class="card is-small">
-  <header class="card-header notification is-primary">
+  <header class="card-header notification is-link">
     <p class="card-header-title has-text-centered has-text-black title is-4">
       <%= @todo_list.title %>
       <span class="icon ">
@@ -33,7 +33,7 @@
 <div>
     <h2 class="title is-3 has-text-left ml20 mt20 mb20">Todos Added - <%= @todo_list.todo_items.count %></h2>
 <%= render @todo_list.todo_items %>
-<h2 class="title has-text-left is-3 mt50 mb20">Add a New Todo</h2>
+<h2 class="title has-text-centered is-3  mt50 mb20">Add a New Todo</h2>
   <%= render "todo_items/form" %>
 </div>
 </section>
