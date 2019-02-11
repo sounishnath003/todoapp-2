@@ -1,5 +1,6 @@
 class TodoItemsController < ApplicationController
   before_action :set_todo_list
+  before_action :check_todo_item, except: [:create]
 
   def create
     @todo_item = @todo_list.todo_items.create(todo_item_params)
@@ -7,13 +8,19 @@ class TodoItemsController < ApplicationController
   end
 
   def destroy
-    @todo_item = @todo_list.todo_item.find(params[:id])
-    @todo_item.destroy
-
-    redirect_to todo_list_path(@todo_list)
+    if @todo_item.destroy
+      flash[:success] = "Todo item has been deleted!."
+    else
+      flash[:error] = "Todo item cannot be deleted!."
+    end
+    redirect_to @todo_list
   end
 
   private_methods
+  def check_todo_item
+    @todo_item = @todo_list.todo_items.find(params[:id])
+  end
+
   def set_todo_list
     @todo_list = TodoList.find(params[:todo_list_id])
   end

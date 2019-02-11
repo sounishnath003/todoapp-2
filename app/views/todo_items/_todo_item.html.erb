@@ -4,5 +4,9 @@
     <div class="articles has-text-left border">
       <span class="subtitle is-3"><%= todo_item.content %></span>
     </div>
+    <div class="flex mt20 has-text-left">
+      <%= link_to "Delete", todo_list_todo_item_path(@todo_list, todo_item.id) , method: :delete, data: {confirm: "Are You Completed ?"}, class: "button is-danger is-small" %>
+      <%# <span class=""><i class="fa fa-bin"></i></span> %>
+    </div>
   </section>
 </div>
