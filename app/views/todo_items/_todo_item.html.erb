@@ -1,12 +1,30 @@
-<div class="container mt50">
-  <section class="block">
-    <h2 class="title is-3 has-text-left mb20">Todos</h2>
+<div-- class="container mt50">
+  <section class="block ml20">
+
+    <!--div class="articles has-text-left border">
+      <span class="subtitle is-3"><%= todo_item.content %></span>
+    </div-->
+  <% if todo_item.complete %>
+  <strike>
     <div class="articles has-text-left border">
+      <span class="subtitle is-3"><%= todo_item.content %></span>
+    </div>
+  </strike>
+         <div class="flex mt20 has-text-left">
+    
+      <%# <span class=""><i class="fa fa-bin"></i></span> %>
+
+    </div>
+    <% else %>
+      <div class="articles has-text-left border">
       <span class="subtitle is-3"><%= todo_item.content %></span>
     </div>
     <div class="flex mt20 has-text-left">
       <%= link_to "Delete", todo_list_todo_item_path(@todo_list, todo_item.id) , method: :delete, data: {confirm: "Are You Completed ?"}, class: "button is-danger is-small" %>
       <%# <span class=""><i class="fa fa-bin"></i></span> %>
-    </div>
+      <%= link_to "Mark as complete", complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch, data: {
+        confirm: "Have You Been Completed?"
+      }, class: "button is-warning is-small p5" %>
+  <% end %>
   </section>
 </div>
