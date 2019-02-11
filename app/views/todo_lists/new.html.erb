@@ -1,5 +1,6 @@
-<h1>New Todo List</h1>
+<h1 class = "title is-3 has-text-centered mt50">New Todo List</h1>
+
 
 <%= render 'form', todo_list: @todo_list %>
 
-<%= link_to 'Back', todo_lists_path %>
+<%= link_to 'Back', todo_lists_path,  {:class => "button is-warning mt20"} %>

@@ -1,7 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <div class="container block is-large">
+    <div class="">
     <h1 class="title mt60 p10 has-text-centered mt-5 has-text-black">Todo Lists</h1>
+
+    <%= form_tag(todo_lists_path, method: :get) do %>
+      <%= text_field_tag(:search, params[:search]), placeholder: "Search Todos" %>
+      <%= submit_tag "Search" %>
+    <% end %>
+
+    </div>
 
     <table class="table mr-auto  is-striped has-text-centered">
       <thead>
