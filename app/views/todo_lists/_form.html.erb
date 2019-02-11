@@ -1,0 +1,35 @@
+<%= form_with(model: todo_list, local: true) do |form| %>
+  <% if todo_list.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(todo_list.errors.count, "error") %> prohibited this todo_list from being saved:</h2>
+
+      <ul>
+      <% todo_list.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <section class="container w-full mr-auto">
+
+    <div class="field">
+    <div class="control">
+      <%= form.label :title, class: "title is-4 mb10 mt50" %>
+      <%= form.text_field :title, class: "input is-warning m20" %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :description, class: "title is-4 mb10 mt50" %>
+    <%= form.text_area :description, class: "input is-link m20 p5", style: "height: 150px;" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Done", class: "button is-primary" %>
+  </div>
+<% end %>
+
+
+
+  </section>

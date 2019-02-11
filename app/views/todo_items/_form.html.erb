@@ -1,0 +1,5 @@
+<%= simple_form_for ([@todo_list, @todo_list.todo_items.build]) do |f| %>
+  <%= f.text_field :content, placeholder: "New Todo Item", class: "input is-warning w-5" %>
+  <br>
+  <%= f.submit "Submit", class: "button is-primary mt20" %>
+<% end %>

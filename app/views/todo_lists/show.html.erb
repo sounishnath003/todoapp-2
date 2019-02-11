@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<section class="block mr-auto has-text-centered mt50">
+    <div class="card is-small">
+  <header class="card-header notification is-primary">
+    <p class="card-header-title flex has-text-black title is-4">
+      <%= @todo_list.title %>
+      <span class="icon ">
+        <i class="fa fa-edit ml20"></i>
+      </span>
+    </p>
+  </header>
+  <div class="card-content">
+    <div class="content">
+      <div class="subtitle is-4">
+        <%= @todo_list.description %>
+      </div>
+      <br><br>
+      <a href="#">@rails</a>. <a href="#">made</a> <a href="#">you 😋</a>
+      <br>
+      <time datetime="2016-1-1" class= "subtitle is-6 is-warning">
+        <%= @todo_list.updated_at %>
+      </time>
+    </div>
+  </div>
+  <footer class="card-footer mt10">
+    <%= link_to 'Edit', edit_todo_list_path(@todo_list), class: "card-footer-item button is-link" %>
+    <%= link_to 'Back', todo_lists_path, class: "card-footer-item button is-warning" %>
+    <%= link_to "Delete", todo_list_path(@todo_list), class: "card-footer-item is-danger button", data:{confirm: "Are You Sure To Do So ?"} %>
+  </footer>
+</div>
+
+<div>
+<%= render @todo_list.todo_items %>
+<h2 class="title has-text-left is-3 mt50 mb20">Add a New Todo</h2>
+  <%= render "todo_items/form" %>
+</div>
+</section>
